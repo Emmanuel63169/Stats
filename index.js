@@ -52,7 +52,7 @@ function getLength(numbers) {
 function getSum(numbers) {
   let sum = 0
   for (let i = 0; i <numbers.length; i++) {
-    sum =+ numbers[i];
+    sum += numbers[i];
   }
     return (sum);
 }
@@ -103,17 +103,8 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  let min = numbers[0];
-  let max = numbers[0];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] < min) {
-      min = numbers[i];
-    } else if (numbers[i] > max) {
-      max = numbers[i];
-      }
-  }
-
-  return (min,max);
+ 
+  return getMax(numbers) - getMin(numbers);
 }
 
 /**
@@ -121,10 +112,10 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  let evens = numbers[0];
+  let evens = [];
   for (let i = 0; i <numbers.length; i++) {
     if (numbers[i] % 2 === 0){
-    evens = numbers[i];
+    evens.push (numbers[i]);
     }
   }
   return (evens);
@@ -135,10 +126,10 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  let odds = numbers[0];
+  let odds = [];
   for (let i = 0; i <numbers.length; i++) {
-    if (numbers[i] % 1 === 0){
-    odds = numbers[i];
+    if (numbers[i] % 2 !== 0){
+    odds.push (numbers[i]);
     }
   }
   return (odds);
